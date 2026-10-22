@@ -1,0 +1,636 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  --maroon: #6b1d2f;
+  --dark: #48111f;
+  --pink: #f5d6df;
+  --light: #fff7f9;
+  --accent: #d77c99;
+  --text: #402832;
+  --muted: #806b72;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--maroon);
+  color: white;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+span {
+  color: inherit;
+}
+
+h1 span, h2 span, .navbar-brand span {
+  color: var(--accent);
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--pink);
+  padding: 12px 0;
+  box-shadow: 0 4px 18px #25000b30;
+}
+
+.navbar-brand {
+  color: var(--maroon) !important;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.nav-link {
+  color: var(--maroon) !important;
+  font-weight: 700;
+  margin-left: 10px;
+  transition: color .3s;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--maroon);
+}
+
+/* PEMISAH SECTION */
+.section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0 75px;
+  scroll-margin-top: 70px;
+  overflow: hidden;
+}
+
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--maroon);
+  padding-top: 110px;
+  padding-bottom: 70px;
+}
+
+#about {
+  min-height: 100vh;
+  background: #5e182a;
+  border-top: 1px solid rgba(245, 214, 223, .2);
+}
+
+#skill, #contact {
+  background: var(--dark);
+}
+
+#project {
+  background: var(--maroon);
+}
+
+/* HOME */
+.eyebrow {
+  color: var(--pink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.home h1 {
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.home-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.home-description {
+  max-width: 550px;
+  color: #f4dfe6;
+  line-height: 1.9;
+}
+
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 12px 23px;
+  border-radius: 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  transition: transform .3s, background .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-pink {
+  background: var(--pink);
+  border: 1px solid var(--pink);
+  color: var(--maroon);
+}
+
+.btn-pink:hover {
+  background: #edb9ca;
+  border-color: #edb9ca;
+  color: var(--maroon);
+}
+
+.btn-outline-pink {
+  background: transparent;
+  border: 1px solid var(--pink);
+  color: white;
+}
+
+.btn-outline-pink:hover {
+  background: var(--pink);
+  color: var(--maroon);
+}
+
+/* FOTO PROFIL HOME */
+.profile-wrap {
+  width: min(320px, 80vw);
+  aspect-ratio: 1;
+  margin: auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+  animation: floatProfile 3.5s ease-in-out infinite;
+}
+
+.profile-img {
+  display: block;
+  width: 84%;
+  height: 84%;
+  border-radius: 50%;
+  border: 5px solid var(--pink);
+  box-shadow: 0 0 25px #f5d6df70, 0 0 55px #f5d6df30;
+  object-fit: cover;
+}
+
+.star {
+  position: absolute;
+  color: var(--pink);
+  text-shadow: 0 0 12px #ffd3e0;
+  animation: twinkle 1.5s ease-in-out infinite alternate;
+}
+
+.star1 {
+  top: 7%;
+  right: 12%;
+  font-size: 2rem;
+}
+
+.star2 {
+  top: 40%;
+  left: 3%;
+  font-size: 2.5rem;
+  animation-delay: .5s;
+}
+
+.star3 {
+  bottom: 10%;
+  right: 8%;
+  font-size: 1.8rem;
+  animation-delay: .8s;
+}
+
+@keyframes floatProfile {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes twinkle {
+  from { opacity: .35; scale: .8; }
+  to { opacity: 1; scale: 1.15; }
+}
+
+/* JUDUL SECTION */
+.section-title {
+  max-width: 720px;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+
+.section-title h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.section-title > p:last-child {
+  color: #f0dbe2;
+  line-height: 1.8;
+}
+
+/* ABOUT: DUA KOTAK TERPISAH */
+.about-layout {
+  margin-bottom: 0;
+}
+
+.about-photo-card {
+  height: 100%;
+  min-height: 320px;
+  padding: 12px;
+  background: var(--light);
+  border: 1px solid var(--pink);
+  border-radius: 22px;
+  box-shadow: 0 12px 28px #24000b30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-description-card {
+  height: 100%;
+  padding: 28px;
+  background: var(--light);
+  color: var(--text);
+  border: 1px solid var(--pink);
+  border-radius: 22px;
+  box-shadow: 0 12px 28px #24000b25;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.about-description-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px #24000b3d;
+}
+
+.about-label {
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.about-description-card h3 {
+  color: var(--maroon);
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.about-description-card p:not(.about-label) {
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.about-tags span {
+  padding: 6px 12px;
+  border-radius: 25px;
+  background: #f3d9e2;
+  color: var(--maroon);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+/* SUBJUDUL */
+.sub-title {
+  margin: 38px 0 20px;
+}
+
+.sub-title h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sub-title p {
+  color: #f0dbe2;
+  margin: 0;
+}
+
+/* KARTU UMUM */
+.info-card {
+  height: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--light);
+  color: var(--text);
+  border: 1px solid var(--pink);
+  box-shadow: 0 10px 25px #1c000826;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px #1c00083d;
+}
+
+.info-card h3 {
+  color: var(--maroon);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+/* PENDIDIKAN */
+.number, .tag {
+  display: inline-block;
+  background: #f3d9e2;
+  color: var(--maroon);
+  border-radius: 30px;
+  padding: 5px 11px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.education-card h4 {
+  color: var(--maroon);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.education-card p {
+  font-size: .82rem;
+}
+
+.map {
+  width: 100%;
+  height: 165px;
+  border: 0;
+  border-radius: 12px;
+  background: #ead5dc;
+}
+
+/* SKILL */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-number {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--pink);
+  color: var(--maroon);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.skill-card p {
+  flex-grow: 1;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  color: var(--maroon);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  margin: 12px 0 8px;
+}
+
+.progress {
+  height: 9px;
+  background: #ecd8df;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #8f2946, #d98aa2);
+  border-radius: 30px;
+}
+
+.small-note {
+  color: #f0dbe2;
+  font-size: .8rem;
+  margin-top: 20px;
+}
+
+/* PROJECT */
+.project-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #ead5dc;
+}
+
+.project-content {
+  padding: 21px;
+}
+
+.project-content h3 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.project-content p {
+  margin-bottom: 0;
+}
+
+.experience-card h5 {
+  color: var(--maroon);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+/* CONTACT */
+.contact-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-icon {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--maroon);
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+}
+
+.contact-card a:not(.btn) {
+  color: var(--maroon);
+  font-size: .88rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+footer {
+  background: #300b16;
+  color: var(--pink);
+  text-align: center;
+  padding: 22px 12px;
+  font-size: .85rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ANIMASI NAVIGASI */
+@keyframes fromRight {
+  from { opacity: 0; transform: translateX(25px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fromLeft {
+  from { opacity: 0; transform: translateX(-25px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fromTop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fromBottom {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#about:target { animation: fromRight .6s ease; }
+#skill:target { animation: fromLeft .6s ease; }
+#project:target { animation: fromTop .6s ease; }
+#contact:target { animation: fromBottom .6s ease; }
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+  .section {
+    padding: 85px 0 60px;
+  }
+
+  #home {
+    padding-top: 115px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+
+  .home-description {
+    margin-inline: auto;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  .profile-wrap {
+    width: min(250px, 68vw);
+  }
+
+  #about {
+    padding-top: 90px;
+  }
+
+  .about-photo-card {
+    min-height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-photo {
+    height: 280px;
+  }
+
+  .about-description-card {
+    padding: 22px;
+  }
+
+  .about-description-card p:not(.about-label) {
+    text-align: left;
+  }
+
+  .sub-title {
+    margin-top: 30px;
+  }
+
+  .info-card {
+    padding: 20px;
+  }
+
+  .project-card {
+    padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .profile-wrap, .star {
+    animation: none;
+  }
+
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+  }
+}
